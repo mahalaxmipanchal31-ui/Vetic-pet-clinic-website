@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vetic Pet Clinic</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    background: #f9f9f9;
+    color: #333;
+  }
+  header {
+    background-color: #ff4a82;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  header h1 {
+    font-size: 28px;
+    margin: 0;
+  }
+  nav {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+  main {
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 9px rgba(0,0,0,0.1);
+  }
+  section {
+    margin-bottom: 40px;
+  }
+  h2 {
+    color: #ff4a82;
+    margin-bottom: 20px;
+  }
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  form label {
+    display: block;
+    margin: 15px 0 6px;
+    font-weight: bold;
+  }
+  form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  form textarea {
+    resize: vertical;
+  }
+  form button {
+    margin-top: 15px;
+    background-color: #ff4a82;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  form button:hover {
+    background-color: #e03e72;
+  }
+  footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 17px 20px;
+    margin-top: 50px;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;
+      gap: 12px;
+    }
+    header {
+      text-align: center;
+      flex-direction: column;
+    }
+  }
+  .map-container {
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 9px rgba(0,0,0,0.1);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Vetic Pet Clinic</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#appointment">Appointment</a>
+    <a href="#contact">Contact</a>
+    <a href="#location">Location</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="about">
+    <h2>About Vetic Pet Clinic</h2>
+    <p>
+      Vetic Pet Clinic is a 24x7 pet hospital located in the heart of Kalyan Nagar, Bengaluru.
+      We provide expert veterinary care with compassion and dedication. Our experienced team
+      strives to ensure the health, happiness, and well-being of your pets by offering comprehensive services tailored to their needs.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>24x7 Emergency Veterinary Care</li>
+      <li>General Health Checkups</li>
+      <li>Vaccinations and Preventive Care</li>
+      <li>Pet Surgery and Treatments</li>
+      <li>Pet Nutrition and Wellness Advice</li>
+      <li>Grooming and Hygiene Services</li>
+      <li>Dental Care</li>
+      <li>Parasite Control and Flea Treatment</li>
+    </ul>
+  </section>
+
+  <section id="appointment">
+    <h2>Book an Appointment</h2>
+    <form id="appointmentForm">
+      <label for="name">Your Name*</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+      
+      <label for="phone">Phone Number*</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your contact number" required pattern="[0-9]{10}" title="10 digit phone number" />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" />
+
+      <label for="petName">Pet's Name*</label>
+      <input type="text" id="petName" name="petName" placeholder="Your pet's name" required />
+
+      <label for="petType">Type of Pet*</label>
+      <select id="petType" name="petType" required>
+        <option value="">Select pet type</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="date">Preferred Appointment Date*</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="time">Preferred Time Slot*</label>
+      <select id="time" name="time" required>
+        <option value="">Select time</option>
+        <option value="10am-12pm">10 AM - 12 PM</option>
+        <option value="12pm-2pm">12 PM - 2 PM</option>
+        <option value="3pm-5pm">3 PM - 5 PM</option>
+        <option value="5pm-7pm">5 PM - 7 PM</option>
+      </select>
+
+      <label for="notes">Additional Notes</label>
+      <textarea id="notes" name="notes" rows="3" placeholder="Any specific concerns or information..."></textarea>
+
+      <button type="submit">Submit Appointment</button>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Address:</strong><br />
+      932, Ground Floor, Vetic Pet Clinic Kalyan Nagar<br />
+      5th A Cross Rd, near Kalyan Nagar,<br />
+      HRBR Layout 1st Block,<br />
+      1st Block, Kalyan Nagar,<br />
+      Bengaluru, Karnataka 560043
+    </p>
+    <p><strong>Phone:</strong> +91 9019466412</p>
+    <p><strong>Email:</strong> laxmipanchal@gmail.com</p>
+  </section>
+
+  <section id="location">
+    <h2>Our Location</h2>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps?q=932,+Ground+Floor,+Vetic+Pet+Clinic+Kalyan+Nagar,+5th+A+Cross+Rd,+near+Kalyan+Nagar,+HRBR+Layout+1st+Block,+1st+Block,+Kalyan+Nagar,+Bengaluru,+Karnataka+560043&output=embed"
+        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2024 Vetic Pet Clinic. All rights reserved.
+</footer>
+
+<script>
+  // Simple form submission with alert simulation
+  document.getElementById('appointmentForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('Thank you for booking an appointment with Vetic Pet Clinic. We will contact you shortly.');
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
